@@ -1,0 +1,145 @@
+section {
+    width: 100%;
+}
+.logo {
+    max-width: 100px;
+    margin-top: 20px;
+}
+.header{
+    background-color: #8387E2;
+    padding-bottom: 10px;
+}
+.right {
+    margin-left: auto;
+}
+.lancamentos h1 {
+    margin-bottom: 20px;
+}
+.purple{
+    background-color: #4F567D;
+}
+#carouselExampleIndicators {
+    padding: 30px;
+}
+.carousel-indicators [data-bs-target] {
+ color: black !important; 
+ width: 10px;
+ height: 10px;
+ border: 0;
+ border-radius: 10px;
+}
+.checked {
+    color: orange;
+}
+
+/* inicio em destaque */
+.emdestaquesec {
+    background-color: #9697D6;
+    padding-bottom: 15px;
+}
+.em-destaque {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.poster {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.emdestaquecontent img {
+    width: 97%;
+    height: 97%;
+}
+.botaofilmes {
+    margin-right: 10px;
+}
+/* Ultimas avaliações */
+.Comentarios {
+    background-color: #8387E2;
+}
+.avaliacoes1 {
+    padding-bottom: 10px;
+}
+.comment{
+    background-color: white;
+    text-align: left;
+    padding: 20px;
+    height: 100%;
+}
+
+.botaoavaliacoes {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.As {
+    margin-bottom: 10px;
+}
+/* making of */
+
+.makingOf{
+    background-color: #4F567D;
+    padding-bottom: 10px;
+}
+/* novidades */
+.noticias {
+    background-color: #A1B0D4;
+    padding-top: 30px;
+}
+.img_noticia{
+    height: 180px;
+    width: 200px;
+    margin-right: 5px;
+    float: left;
+}
+.content {
+    border-bottom: 4px solid #4A449E;
+    padding-bottom: 15px;
+    padding-top: 10px;
+}
+.content h5>a{
+    text-decoration: none;
+    color: #0D1721;
+
+}
+.content h5>a:hover{
+    color: #6437A3;;
+}
+.badge-secondary {
+    color: #fff;
+    background-color: #4a449e;
+}
+
+.redes{
+    justify-content: center;
+}
+
+.footer{
+    background-color: #8387E2;
+    padding-bottom: 10px;
+    padding-top: 40px;
+}
+.logofooter {
+    max-width: 50px;
+}
+
+@media screen and (max-width: 850px) {
+    .header{
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        z-index: 999;
+        padding-bottom: 0px;
+      }
+      .header nav {
+        display: absolute;
+          width: 100%;
+          height: 100%;
+      }
+      #carouselExampleIndicators {
+        margin-top: 150px;
+    }
+    .img_noticia {
+        float: none;
+    }
+}
+
