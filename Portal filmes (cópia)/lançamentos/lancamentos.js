@@ -18,10 +18,8 @@ let ApiReq = (url, next) => {
 
 function ShowMovies() {
   let data = JSON.parse(this.responseText);
-  console.log(data);
   let text = "";
   data.results.forEach((movie) => {
-    console.log(movie);
     text += `
     <div class="card">
         <img src="https://www.themoviedb.org/t/p/w780${movie.poster_path}" class="card-img-top" alt="imagem não carregada">

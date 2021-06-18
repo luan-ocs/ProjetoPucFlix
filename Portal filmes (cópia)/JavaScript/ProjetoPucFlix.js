@@ -1,5 +1,6 @@
 let form = document.getElementById("form");
-
+let cards = "";
+let trailers = [];
 let ApiReq = (url, next) => {
   let apiKey = "756a9a575c39bb425f46d2db1f7bec3c";
   let xhr = new XMLHttpRequest();
@@ -13,7 +14,6 @@ function EmDestaqueCards() {
   sessionStorage.setItem("movies", JSON.stringify(movies));
   printCards(movies, 3);
 }
-
 function printCards(movies, num) {
   cards = "";
   for (let i = 0; i <= num; i++) {
@@ -26,13 +26,12 @@ function printCards(movies, num) {
   let CardsDiv = document.getElementById("CardsDiv");
   CardsDiv.innerHTML = cards;
 }
-
 // configurando search
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   let query = document.getElementById("search").value;
-  localStorage.setItem("query", query);
+  sessionStorage.setItem("query", query);
   window.location.href = "./Portal filmes (cópia)/Search/Search.html";
 });
 
@@ -46,46 +45,8 @@ function buttonsCard() {
     printCards(movies, num);
   };
 }
-window.onload = () => {
-  ApiReq("https://api.themoviedb.org/3/trending/movies/week", EmDestaqueCards);
-  buttonsCard();
-};
-
-// pegar os videos dos lancamentos !
-function getElementsOfApi(query) {
-  let Elements = [];
-  let apiKey = "756a9a575c39bb425f46d2db1f7bec3c";
-  async function ApiReq(url, next){
-    let xhr = new XMLHttpRequest();
-    console.log(url);
-    xhr.open("GET", `${url}?api_key=${apiKey}&language=pt-BR`);
-    let data = await fetch(`${url}?api_key${apiKey}&language=pt-BR`).then((data) => data.json().then((data) => data.results))
-    next(data)
-  };
-
-  async function element(p){
-    let movie = p;
-    let video = await fetch(
-      `https://api.themoviedb.org/3/movie/${p.id}/videos?api_key=${apiKey}&language=pt-BR`).then((response) => {
-      response.json().then((data) => data) ;
-    });
-    movie.video_id = video;
-    Elements.push(movie);
-  };
-  async function addElement(responseText) {
-    let data = responseText;
-    console.log(data)
-    data.results.forEach((Movie) => {
-      element(Movie);
-    });
-  }
-  ApiReq(query, addElement);
-
-  return Elements;
+window.onload = () =>{
+ApiReq("https://api.themoviedb.org/3/movie/now_playing", carouselconfig);
+ApiReq("https://api.themoviedb.org/3/trending/movies/week", EmDestaqueCards);
 }
-let element = getElementsOfApi(
-  "https://api.themoviedb.org/3/movie/now_playing"
-);
-console.log(element);
-
-// 756a9a575c39bb425f46d2db1f7bec3c <-- apiKey
+buttonsCard();
